@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>reveal.js - The HTML Presentation Framework</title>
+
+    <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+    <meta name="author" content="Hakim El Hattab">
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <link rel="stylesheet" href="css/reveal.min.css">
+    <link rel="stylesheet" href="css/theme/night.css" id="theme">
+
+    <!-- For syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+    <script>
+        document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+    <div class="reveal">
+
+        <!-- Any section element inside of this container is displayed as a slide -->
+        <div class="slides">
+            <section>
+                <h1>Your Ad-blocker Broke My Site!</h1>
+                <p>
+                    <br></p>
+                <p>Guy Vider</p>
+                <p>
+                    <a href="http://www.travelingtechguy.com">Traveling Tech Guy</a>
+                </p>
+                <br /><br />
+                <p style="font-size: small;">
+                    Use the &lt;space&gt; bar, arrow keys, or the navigator on the bottom right, to advance through presentation. Press &lt;esc&gt; to see a presentation map.
+                </p>
+                <br /><br />
+                <p style="font-size: small;" class="fragment">
+                    Special thanks to Steve Sauders' <a href="http://stevesouders.com/docs/paypal-spof-20121115.pptx">SPOF presentation</a> (PPT file)
+                </p>
+            </section>
+            <section>
+                <section>
+                    <h2>What's an Ad-blocker?</h2>
+                    <div style="text-align: left;" class="fragment">
+                        <ol>
+                            <li>
+                                A browser add-on/plugin/extension (pick your favorite browser's lingo) that maintains a blacklist of sites serving ads, cookies, beacons etc., and blocks content from those addresses
+                                <br>
+                                <br></li>
+                            <li>
+                                The user can manually add more site addresses, thus basically deciding what content appears on his page
+                                <br>
+                                <br></li>
+                            <li>
+                                Newer versions also block beacons and widgets from known social sites like Facebook, Twitter, LinkedIn etc.
+                                <br>
+                                <br></li>
+                        </ol>
+                    </div>
+                </section>
+                <section>
+                    <h2>Why Use an Ad-blocker?</h2>
+                    <div style="text-align: left;" class="fragment">
+                        <ol>
+                            <li>
+                                Maintains your privacy - blocks beacons and analytics; prevents cross-site data sharing
+                                <br>
+                                <br></li>
+                            <li>
+                                Blocks spam - unwanted/inappropriate/nagging ads
+                                <br>
+                                <br></li>
+                            <li>
+                                Removes annoying ads - have you ever had a flash ad jumping in a loop in the middle of your screen?
+                                <br>
+                                <br></li>
+                            <li>
+                                <span style="font-size: 30.0px;font-style: normal;font-variant: normal;line-height: 36.0px;">Improves page load time significantly</span>
+                                <br></li>
+                        </ol>
+                    </div>
+                </section>
+                <section>
+                    <h2>Common Ad-blockers</h2>
+                    <div style="text-align: left;">
+                        <ul>
+                            <li>
+                                <a href="https://adblockplus.org/en/">AdBlock+</a>
+                                - the mother of them all. Started on Firefox, nowavailable for Chrome and mobile. Maintains updated black lists
+                                <br>
+                                <br></li>
+                            <li>
+                                <a href="https://www.ghostery.com/">Ghostery</a>
+                                - one of the best blockers out there. Can many kinds of beacons and HTML elements. Shows current information on what's blocked and why
+                                <br>
+                                <br></li>
+                            <li>
+                                <a href="https://disconnect.me/">Disconnect</a>
+                                - developed by an ex-Googler to block Facebook, but now blocks several other beacons and ad networks
+                                <br>
+                                <br></li>
+                            <li>
+                                <a href="https://tools.google.com/dlpage/gaoptout">GA Opt-Out</a>
+                                - an extension offered by Google itself. It prevents any analytics going back to their server from your browser
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+                <section>
+                    <h2>Ghostery Sample</h2>
+                    <div>
+                        <img src="img/Ghostery1.png">
+                        <img src="img/Ghostery2.png" style="line-height: 1.2em; letter-spacing: -0.02em;">
+                        <br></div>
+                </section>
+            </section>
+            <section>
+                <section>
+                    <h2>Why Should I Care?</h2>
+                    <div style="text-align: left;">
+                        You may be thinking: "my web app does not use any ads, or metrics - why should I care?". You should if you rely on one of the following:
+                    </div>
+                    <br />
+                    <div style="text-align: left;" class="fragment">
+                        <ol>
+                            <li>
+                                <b>Google maps or widgets</b> - these can either be blocked by a plugin, or by the network provider (China?). Ever accessed a feedback form that misbehaved and had a big empty square in the middle? It might have been a map
+                                <br /><br />
+                            </li>
+                            <li>
+                                <b>LinkedIn widgets</b> - some ad-blockers treat LinkedIn as a tracker, so if you rely on a widget - tough cookies
+                                <br /><br />
+                            </li>
+                            <li>
+                                <b>YouTube</b> - see Google
+                                <br /><br />
+                            </li>
+                            <li>
+                                <b>Twitter</b> - their script can really block your site, slowing it down would be the best outcome, crashing it the worst
+                            </li>
+                        </ol>
+                    </div>
+                </section>
+                <section>
+                    <h2>Common Pitfalls</h2>
+                    <div style="text-align: left;">
+                        <br></div>
+                    <div style="text-align: left;">
+                        <ul>
+                            <li>
+                                <span style="letter-spacing: -0.02em;">
+                                    If your JavaScript code is dependent on an external resource loading...
+                                    <br>
+                                    <br></span>
+                            </li>
+                            <li>
+                                <span style="letter-spacing: -0.02em;">
+                                    If your code breaks or is unusable when a resource is not available...
+                                    <br></span>
+                                <br></li>
+                            <li>
+                                <span style="letter-spacing: -0.02em;">
+                                    If the design of your page hinges upon an external component appearing at a certain location...
+                                </span>
+                            </li>
+                        </ul>
+                        <div>
+                            <br></div>
+                        <div style="text-align: left;"> <b>&nbsp; &nbsp; ...then any user who uses an ad-blocker
+                                <br>&nbsp; &nbsp; might break&nbsp;your web page</b>
+                            <br></div>
+                    </div>
+                </section>
+                <section>
+                    <h2>Sample JavaScript Pattern</h2>
+                    <div style="text-align: left;">If your code looks like this:</div>
+                    <pre>
+                        <code>
+&lt;script src="/link/to/remote/script.js"&gt;&lt;/script&gt;
+
+...
+
+&lt;script&gt;
+    var x = objectFromRemoteScript.property;
+    objectFromRemoteScript.function();
+&lt;/script&gt;
+                        </code>
+                    </pre>
+                    <div style="text-align: left;">Then you're potentially falling into the same trap:</div>
+                    <div style="text-align: left;">what if /link/to/remote is on the ad-blocker's blacklist?</div>
+                    <div style="text-align: left;">
+                        <br></div>
+                    <div style="text-align: left;">
+                        The object you refer to will evaluate to&nbsp;
+                        <span style="font-size: 0.55em; line-height: 1.2em; letter-spacing: -0.02em; background-color: rgb(255, 51, 0);">undefined</span>
+                        , so calling a method or accessing a property will yield an error.
+                    </div>
+
+                </section>
+                <section>
+                    <h2>Screwed Up Site: USAir</h2>
+                        <img src="img/USAir.png" style="line-height: 1.2em; letter-spacing: -0.02em;">
+                    <div style="text-align: left;">
+                        The behavior of flight booking on the USAir site is significantly affected by ad-block.&nbsp;
+                    </div>
+                    <div style="text-align: left;">
+                        <br></div>
+                    <div style="text-align: left;">
+                        The list of JS errors is long, and explains why certain aspects of the form that depend on JS (such as the drop-down calendars) don't work well, or at all.
+                    </div>
+                </section>
+                <section>
+                    <h2>Just Check for Existence</h2>
+                    <pre>
+                        <code>
+&lt;script src="/link/to/remote/script.js"&gt;&lt;/script&gt;
+
+...
+
+&lt;script&gt;
+if(typeof objectFromRemoteScript == 'undefined') {
+    
+    //<b>prepare an alternative plan</b>:
+    //1. work around the missing component
+    //2. use an alternative
+    //3. if the object is absolutely mandatory, alert the user
+
+}
+else {
+
+    //<b>do the stuff you intended to originally</b>
+
+}
+&lt;/script&gt;
+                        </code>
+                    </pre>
+                </section>
+                <section>
+                    <h2>More Existence Checking Patterns</h2>
+                    <div style="text-align: left;">
+                        <ol>
+                            <li>
+                                Check whether the object is accessible globally:
+                                <br>
+                                <pre>if(typeof window.expectedObject == 'undefined') {...</pre>
+                                <br></li>
+                            <li>
+                                This will return <span style="background-color: rgb(255, 51, 0);">true</span>
+                                if the object exists, <span style="background-color: rgb(255, 51, 0);">false</span>
+                                otherwise:
+                                <br>
+                                <pre>if(!!window.expectedObject) {...</pre>
+                                <br></li>
+                            <li>
+                                Check if the object exists in the global namespace:
+                                <br>
+                                <pre>if("myObjectName" in global) {...</pre>
+                            </li>
+                        </ol>
+                    </div>
+                </section>
+            </section>
+            <section>
+                <section>
+                    <h2>Handling Ad-blocking Gracefully</h2>
+                    <div style="text-align: left;">
+                        <br></div>
+                    <div style="text-align: left;">
+                        Here are a couple of commercial sites that are very aware of the existence of ad-blockers, and will inform you (or punish you) for using them.
+                    </div>
+                </section>
+                <section>
+                    <h2>OkCupid</h2>
+                    <div style="text-align: left;">
+                        OkCupid will inform you that you're harming their revenue stream, and ask for donation:
+                        <img src="img/OKCupid.png" style="line-height: 1.2em; text-align: center; letter-spacing: -0.02em; float:right;"></div>
+                </section>
+                <section>
+                    <h2>Hulu</h2>
+                    <div style="text-align: left;">
+                        Hulu will punish you with a 30-60 seconds delay before allowing you to watch a video, if you're blocking ads:
+                    </div>
+                    <div style="text-align: left;">
+                        <img src="img/Hulu.png">
+                        <br></div>
+                </section>
+                <section>
+                    <h2>AllThingsD</h2>
+                    <div style="text-align: left;">
+                        Will inform you of their use of trackers, and even encourage you to install and ad-blocker (Ghostery a favorite):
+                    </div>
+                    <div style="text-align: left;">
+                        <img src="img/AllThingsD.png">
+                        <br></div>
+                    <div style="text-align: left;">
+                        Fun fact: This message itself uses a cookie; so it would only appear to you once - unless you blocked it originally, that is. :)
+                    </div>
+                </section>
+            </section>
+            <section>
+                <h2>Questions?</h2>
+                <div>
+                    <br></div>
+                <div>Feel free to contact me at:</div>
+                <div>
+                    <a href="http://www.travelingtechguy.com">www.TravelingTechGuy.com</a>
+                </div>
+                <div>
+                    or
+                    <a href="https://twitter.com/traveltechguy">@TravelTechGuy</a>
+                    on Twitter
+                </div>
+            </section>
+        </div>
+
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.min.js"></script>
+
+    <script>
+
+            // Full list of configuration options available here:
+            // https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                controls: true,
+                progress: true,
+                history: true,
+                center: true,
+
+                theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+                transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/none
+
+                // Optional libraries used to extend on reveal.js
+                dependencies: [
+                    { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: 'plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+                    { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+                    // { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+                ]
+            });
+
+        </script>
+
+</body>
+</html>
