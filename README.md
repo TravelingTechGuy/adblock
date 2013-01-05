@@ -11,6 +11,4 @@ This [Reveal.js](https://github.com/hakimel/reveal.js) presentation will:
 
 You can also see the presentation in action [here](http://goo.gl/V41qp), or scan the following QR code:
 
-![QR Code][qr]
-
-[qr]: http://imgur.com/drFOr "QR code for http://goo.gl/V41qp"
+![QR Code](http://imgur.com/drFOr "QR code for http://goo.gl/V41qp")
