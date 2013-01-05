@@ -10,4 +10,5 @@ This [Reveal.js](https://github.com/hakimel/reveal.js) presentation will:
 5. Show how other commercial sites handle ad-blockers gracefully
 
 You can also see the presentation in action [here](http://goo.gl/V41qp), or scan the following QR code:
+
 ![QR Code](http://imgur.com/drFOr)
