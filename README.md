@@ -11,6 +11,6 @@ This [Reveal.js](https://github.com/hakimel/reveal.js) presentation will:
 
 You can also see the presentation in action [here](http://goo.gl/V41qp), or scan the following QR code:
 
-![QR Code](http://imgur.com/drFOr.png "QR code for http://goo.gl/V41qp")
+[![QR code for http://goo.gl/V41qp](http://imgur.com/drFOr.png)](http://goo.gl/V41qp)
 
 (ps: added [tinyurl.com/adblockPres](http://tinyurl.com/adblockPres) as an additional URL)
