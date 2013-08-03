@@ -48,21 +48,38 @@
             </section>
             <section>
                 <section>
+                    <h2>About Me</h2>
+                    <div style="text-align: left;">
+                        <ol>
+                            <li>CTO of <a href="http://www.ex-pos.com" target="_blank">ExPOS Restaurant Analytics</a></li>
+                            <li>Owner of <a href="http://www.TravelingTechGuy.com" target="_blank">Traveling Tech Guy</a> consulting</li>
+                            <li>Web (PHP/Node.js/Asp.Net) and mobile (iOS, Android) developement experience</li>
+                            <li>Blogs: <a href="http://blog.travelingtechguy.com/" target="_blank">blog.travelingtechguy.com</a> and <a href="http://code.travelingtechguy.com/" target="_blank">code.travelingtechguy.com</a></li>
+                            <li>Github: <a href="https://github.com/TravelingTechGuy" target="_blank">https://github.com/TravelingTechGuy</a></li>
+                        </ol>
+                    </div>
+                </section>
+            </section>
+            <section>
+                <section>
                     <h2>What's an Ad-blocker?</h2>
                     <div style="text-align: left;" class="fragment">
                         <ol>
                             <li>
                                 A browser add-on/plugin/extension (pick your favorite browser's lingo) that maintains a blacklist of sites serving ads, cookies, beacons etc., and blocks content from those addresses
                                 <br>
-                                <br></li>
+                                <br>
+                            </li>
                             <li>
                                 The user can manually add more site addresses, thus basically deciding what content appears on his page
                                 <br>
-                                <br></li>
+                                <br>
+                            </li>
                             <li>
                                 Newer versions also block beacons and widgets from known social sites like Facebook, Twitter, LinkedIn etc.
                                 <br>
-                                <br></li>
+                                <br>
+                            </li>
                         </ol>
                     </div>
                 </section>
@@ -73,18 +90,22 @@
                             <li>
                                 Maintains your privacy - blocks beacons and analytics; prevents cross-site data sharing
                                 <br>
-                                <br></li>
+                                <br>
+                            </li>
                             <li>
                                 Blocks spam - unwanted/inappropriate/nagging ads
                                 <br>
-                                <br></li>
+                                <br>
+                            </li>
                             <li>
                                 Removes annoying ads - have you ever had a flash ad jumping in a loop in the middle of your screen?
                                 <br>
-                                <br></li>
+                                <br>
+                            </li>
                             <li>
                                 <span style="font-size: 30.0px;font-style: normal;font-variant: normal;line-height: 36.0px;">Improves page load time significantly</span>
-                                <br></li>
+                                <br>
+                            </li>
                         </ol>
                     </div>
                 </section>
@@ -96,17 +117,20 @@
                                 <a href="https://adblockplus.org/en/">AdBlock+</a>
                                 - the mother of them all. Started on Firefox, nowavailable for Chrome and mobile. Maintains updated black lists
                                 <br>
-                                <br></li>
+                                <br>
+                            </li>
                             <li>
                                 <a href="https://www.ghostery.com/">Ghostery</a>
                                 - one of the best blockers out there. Can many kinds of beacons and HTML elements. Shows current information on what's blocked and why
                                 <br>
-                                <br></li>
+                                <br>
+                            </li>
                             <li>
                                 <a href="https://disconnect.me/">Disconnect</a>
                                 - developed by an ex-Googler to block Facebook, but now blocks several other beacons and ad networks
                                 <br>
-                                <br></li>
+                                <br>
+                            </li>
                             <li>
                                 <a href="https://tools.google.com/dlpage/gaoptout">GA Opt-Out</a>
                                 - an extension offered by Google itself. It prevents any analytics going back to their server from your browser
@@ -159,24 +183,26 @@
                                 <span style="letter-spacing: -0.02em;">
                                     If your JavaScript code is dependent on an external resource loading...
                                     <br>
-                                    <br></span>
+                                    <br>
+                                </span>
                             </li>
                             <li>
                                 <span style="letter-spacing: -0.02em;">
                                     If your code breaks or is unusable when a resource is not available...
-                                    <br></span>
-                                <br></li>
+                                    <br>
+                                </span>
+                                <br>
+                            </li>
                             <li>
                                 <span style="letter-spacing: -0.02em;">
                                     If the design of your page hinges upon an external component appearing at a certain location...
                                 </span>
                             </li>
                         </ul>
-                        <div>
-                            <br></div>
-                        <div style="text-align: left;"> <b>&nbsp; &nbsp; ...then any user who uses an ad-blocker
-                                <br>&nbsp; &nbsp; might break&nbsp;your web page</b>
-                            <br></div>
+                        <div><br></div>
+                        <div style="text-align: left;">
+                            <b>&nbsp; &nbsp; ...then any user who uses an ad-blocker<br>&nbsp; &nbsp; might break&nbsp;your web page</b><br>
+                        </div>
                     </div>
                 </section>
                 <section>
@@ -204,6 +230,18 @@
                         , so calling a method or accessing a property will yield an error.
                     </div>
 
+                </section>
+                <section>
+                    <h1>Hands-on Demo</h1>
+                    <a href="demo/google.html" target="_blank">Google API</a>&nbsp;|&nbsp;
+                    <a href="demo/twitter.html" target="_blank">Twitter & LinkedIn</a>&nbsp;|&nbsp;
+                    <a href="demo/comscore.html" target="_blank">comScore API</a>&nbsp;|&nbsp;
+                    <a href="demo/google.html" target="_blank">comScore API fixed</a>
+                    <div><br></div>
+                    <div>
+                        To test, you'll need to browse to the pages, rather than open them.<br>
+                        Just run <pre><code>node app.js</code></pre> in the root, and browse to http://localhost:1337/demo/&lt;page name&gt;
+                    </div>
                 </section>
                 <section>
                     <h2>Just Check for Existence</h2>
@@ -273,8 +311,7 @@ else {
                     <div style="text-align: left;">
                         The behavior of flight booking on the USAir site is significantly affected by ad-block.
                     </div>
-                    <div style="text-align: left;">
-                        <br></div>
+                    <div style="text-align: left;"><br></div>
                     <div style="text-align: left;">
                         The list of JS errors is long, and explains why certain aspects of the form that depend on JS (such as the drop-down calendars) don't work well, or at all.
                     </div>

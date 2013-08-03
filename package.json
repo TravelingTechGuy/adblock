@@ -1,0 +1,27 @@
+{
+  "name": "adblock",
+  "version": "1.0.0",
+  "description": "\"Your ad-block broke my site\" presentation",
+  "main": "app.js",
+  "dependencies": {
+    "connect": "latest"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/TravelingTechGuy/adblock.git"
+  },
+  "keywords": [
+    "ad-block",
+    "javascript",
+    "browser"
+  ],
+  "author": "Guy Vider",
+  "license": "BSD",
+  "bugs": {
+    "url": "https://github.com/TravelingTechGuy/adblock/issues"
+  }
+}
