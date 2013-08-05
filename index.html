@@ -37,11 +37,11 @@
                     <a href="http://www.travelingtechguy.com">Traveling Tech Guy</a>
                 </p>
                 <br /><br />
-                <p style="font-size: small;">
+                <p style="font-size: medium;">
                     Use the &lt;space&gt; bar, arrow keys, or the navigator on the bottom right, to advance through presentation. Press &lt;esc&gt; to see a presentation map.
                 </p>
                 <br /><br />
-                <p style="font-size: small;" class="fragment">
+                <p style="font-size: medium;" class="fragment">
                     This presentation uses the <a href="https://github.com/hakimel/reveal.js">Reveal.js</a> framework by Hakim<br />
                     Special thanks to Steve Sauders' <a href="http://stevesouders.com/docs/paypal-spof-20121115.pptx">SPOF presentation</a> (PPT file)
                 </p>
@@ -105,6 +105,10 @@
                             <li>
                                 <span style="font-size: 30.0px;font-style: normal;font-variant: normal;line-height: 36.0px;">Improves page load time significantly</span>
                                 <br>
+                                <br>
+                            </li>
+                            <li>
+                                <span style="font-size: 30.0px;font-style: normal;font-variant: normal;line-height: 36.0px;">Conserves bandwidth</span>
                             </li>
                         </ol>
                     </div>
@@ -156,19 +160,19 @@
                     <div style="text-align: left;" class="fragment">
                         <ol>
                             <li>
-                                <b>Google maps or widgets</b> - these can either be blocked by a plugin, or by the network provider (China?). Ever accessed a feedback form that misbehaved and had a big empty square in the middle? It might have been a map
+                                <strong>Google maps or widgets</strong> - these can either be blocked by a plugin, or by the network provider (China?). Ever accessed a feedback form that misbehaved and had a big empty square in the middle? It might have been a map
                                 <br /><br />
                             </li>
                             <li>
-                                <b>LinkedIn widgets</b> - some ad-blockers treat LinkedIn as a tracker, so if you rely on a widget - tough cookies
+                                <strong>LinkedIn widgets</strong> - some ad-blockers treat LinkedIn as a tracker, so if you rely on LinkedIn Login, or Share widget - tough cookies
                                 <br /><br />
                             </li>
                             <li>
-                                <b>YouTube</b> - see Google
+                                <strong>Advertising Beacons</strong> - calling the beacon's API, when the beacon object is blocked, would kill any JavaScript code that follows
                                 <br /><br />
                             </li>
                             <li>
-                                <b>Twitter</b> - their script can really block your site, slowing it down would be the best outcome, crashing it the worst
+                                <strong>Twitter</strong> - their scripts can really block your site, slowing it down would be the best outcome, crashing it the worst
                             </li>
                         </ol>
                     </div>
@@ -237,10 +241,11 @@
                     <a href="demo/twitter.html" target="_blank">Twitter & LinkedIn</a>&nbsp;|&nbsp;
                     <a href="demo/comscore.html" target="_blank">comScore API</a>&nbsp;|&nbsp;
                     <a href="demo/google.html" target="_blank">comScore API fixed</a>
-                    <div><br></div>
-                    <div>
+                    <div><br><br><br></div>
+                    <div style="font-size: medium">
                         To test, you'll need to browse to the pages, rather than open them.<br>
-                        Just run <pre><code>node app.js</code></pre> in the root, and browse to http://localhost:1337/demo/&lt;page name&gt;
+                        Just run <code style="background: #3f3f3f">node app.js</code> in the presentation's root,<br>
+                        and browse to http://localhost:1337/demo/&lt;page name&gt;
                     </div>
                 </section>
                 <section>
