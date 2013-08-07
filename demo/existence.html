@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Twitter sample</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+
+        <link rel="stylesheet" href="css/normalize.min.css">
+        <link rel="stylesheet" href="css/main.css">
+
+        <!--[if lt IE 9]>
+            <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+            <script>window.html5 || document.write('<script src="js/vendor/html5shiv.js"><\/script>')</script>
+        <![endif]-->
+    </head>
+    <body>
+        <div id="result"></div>
+        
+        <!-- step 1: set global variable -->
+        <script>
+            var adBlocker = true;
+        </script>
+
+        <!-- step 2: change global variable in a file with a blockable name -->
+        <script src="js/ads.js"></script>
+        
+        <!-- step 3: detect variable change - if step 2 was blocked, no change occurs -->
+        <script>
+            document.getElementById('result').textContent = 'adBlocker is ' + (adBlocker ? 'active' : 'inactive');
+        </script>
+        
+    </body>
+</html>

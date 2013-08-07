@@ -11,6 +11,7 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <link rel="stylesheet" href="css/reveal.min.css">
     <link rel="stylesheet" href="css/theme/night.css" id="theme">
+    <link rel="stylesheet" href="css/main.css">
     <!-- For syntax highlighting -->
     <link rel="stylesheet" href="lib/css/zenburn.css">
     <!-- If the query includes 'print-pdf', use the PDF print sheet -->
@@ -29,6 +30,7 @@
 
         <!-- Any section element inside of this container is displayed as a slide -->
         <div class="slides">
+            <!-- home slide -->
             <section>
                 <h1>Your Ad-blocker Broke My Site!</h1>
                 <p><br></p>
@@ -37,19 +39,22 @@
                     <a href="http://www.travelingtechguy.com">Traveling Tech Guy</a>
                 </p>
                 <br /><br />
-                <p style="font-size: medium;">
+                <p class="mediumText">
                     This presentation uses the <a href="https://github.com/hakimel/reveal.js">Reveal.js</a> framework by Hakim<br />
                     Special thanks to Steve Sauders' <a href="http://stevesouders.com/docs/paypal-spof-20121115.pptx">SPOF presentation</a> (PPT file)
                 </p>
                 <br /><br />
-                <p style="font-size: medium;" class="fragment">
+                <p class="mediumText fragment">
                     Use the &lt;space&gt; bar, arrow keys, or the navigator on the bottom right, to advance through presentation. Press &lt;esc&gt; to see a presentation map.
                 </p>
             </section>
+            <!-- end home slide -->
+
+            <!-- about -->
             <section>
                 <section>
                     <h2>About Me</h2>
-                    <div style="text-align: left;">
+                    <div class="pullLeft">
                         <ol>
                             <li>CTO of <a href="http://www.ex-pos.com" target="_blank">ExPOS Restaurant Analytics</a></li>
                             <li>Owner of <a href="http://www.TravelingTechGuy.com" target="_blank">Traveling Tech Guy</a> consulting</li>
@@ -59,11 +64,28 @@
                         </ol>
                     </div>
                 </section>
+                <section>
+                    <h2>About the Presentation</h2>
+                    <h4 class="pullLeft">In this presentation we'll discuss:</h4>
+                    <div class="pullLeft">
+                        <ol>
+                            <li class="fragment">What's are ad-blockers?</li>
+                            <li class="fragment">Why do people use them?</li>
+                            <li class="fragment">How do they impact your code? <strong>(NOT your revenue)</strong></li>
+                            <li class="fragment">How to handle ad-blockers in your JavaScript code</li>
+                            <li class="fragment">How to properly test that your code is ad-blocker proof</li>
+                            <li class="fragment">Samples of web sites that handle and mishandle ad-blockers</li>
+                        </ol>
+                    </div>
+                </section>
             </section>
+            <!-- end about -->
+
+            <!-- ad-blocker introduction -->
             <section>
                 <section>
                     <h2>What's an Ad-blocker?</h2>
-                    <div style="text-align: left;" class="fragment">
+                    <div class="pullLeft fragment">
                         <ol>
                             <li>
                                 A browser add-on/plugin/extension (pick your favorite browser's lingo) that maintains a blacklist of sites serving ads, cookies, beacons etc., and blocks content from those addresses
@@ -85,37 +107,37 @@
                 </section>
                 <section>
                     <h2>Why Use an Ad-blocker?</h2>
-                    <div style="text-align: left;" class="fragment">
+                    <div class="pullLeft">
                         <ol>
-                            <li>
+                            <li class="fragment">
                                 Maintains your privacy - blocks beacons and analytics; prevents cross-site data sharing
                                 <br>
                                 <br>
                             </li>
-                            <li>
+                            <li class="fragment">
                                 Blocks spam - unwanted/inappropriate/nagging ads
                                 <br>
                                 <br>
                             </li>
-                            <li>
+                            <li class="fragment">
                                 Removes annoying ads - have you ever had a flash ad jumping in a loop in the middle of your screen?
                                 <br>
                                 <br>
-                            </li>
-                            <li>
-                                <span style="font-size: 30.0px;font-style: normal;font-variant: normal;line-height: 36.0px;">Improves page load time significantly</span>
+                            </li class="fragment">
+                            <li class="fragment">
+                                Improves page load time significantly
                                 <br>
                                 <br>
                             </li>
-                            <li>
-                                <span style="font-size: 30.0px;font-style: normal;font-variant: normal;line-height: 36.0px;">Conserves bandwidth</span>
+                            <li class="fragment">
+                                Conserves bandwidth
                             </li>
                         </ol>
                     </div>
                 </section>
                 <section>
                     <h2>Common Ad-blockers</h2>
-                    <div style="text-align: left;">
+                    <div class="pullLeft">
                         <ul>
                             <li>
                                 <a href="https://adblockplus.org/en/">AdBlock+</a>
@@ -146,18 +168,22 @@
                     <h2>Ghostery Sample</h2>
                     <div>
                         <img src="img/Ghostery1.png">
-                        <img src="img/Ghostery2.png" style="line-height: 1.2em; letter-spacing: -0.02em;">
-                        <br></div>
+                        <img src="img/Ghostery2.png">
+                        <br>
+                    </div>
                 </section>
             </section>
+            <!-- end ad-blocker introduction -->
+
+            <!-- ad-blocker impact -->
             <section>
                 <section>
                     <h2>Why Should I Care?</h2>
-                    <div style="text-align: left;">
+                    <div class="pullLeft">
                         You may be thinking: "my web app does not use any ads, or metrics - why should I care?". You should if you rely on one of the following:
                     </div>
                     <br />
-                    <div style="text-align: left;" class="fragment">
+                    <div class="pullLeft" class="fragment">
                         <ol>
                             <li>
                                 <strong>Google maps or widgets</strong> - these can either be blocked by a plugin, or by the network provider (China?). Ever accessed a feedback form that misbehaved and had a big empty square in the middle? It might have been a map
@@ -179,9 +205,9 @@
                 </section>
                 <section>
                     <h2>Common Pitfalls</h2>
-                    <div style="text-align: left;">
+                    <div class="pullLeft">
                         <br></div>
-                    <div style="text-align: left;">
+                    <div class="pullLeft">
                         <ul>
                             <li>
                                 <span style="letter-spacing: -0.02em;">
@@ -204,14 +230,76 @@
                             </li>
                         </ul>
                         <div><br></div>
-                        <div style="text-align: left;">
+                        <div class="pullLeft">
                             <strong>&nbsp; &nbsp; ...then any user who uses an ad-blocker<br>&nbsp; &nbsp; might break&nbsp;your web page</strong><br>
                         </div>
                     </div>
                 </section>
+            </section>
+            <!-- ad-blocker impact -->
+
+            <!-- ad-block fails -->
+            <section>
                 <section>
-                    <h2>Sample JavaScript Pattern</h2>
-                    <div style="text-align: left;">If your code looks like this:</div>
+                    <h3>Ad-block #Fails</h3>
+                    <div class="pullLeft">
+                        <br></div>
+                    <div class="pullLeft">
+                        Here are a couple of commercial sites that do not anticipate ad-blockers, and may actually lose customers as a result of that.
+                    </div>
+                </section>
+                <section>
+                    <h3>Screwed Up Site: USAir</h3>
+                    <img src="img/USAir.png" style="line-height: 1.2em; letter-spacing: -0.02em;">
+                    <div class="pullLeft">
+                        The behavior of flight booking on the USAir site is significantly affected by ad-block.
+                    </div>
+                    <div class="pullLeft"><br></div>
+                    <div class="pullLeft">
+                        The list of JS errors is long, and explains why certain aspects of the form that depend on JS (such as the drop-down calendars) don't work well, or at all.
+                    </div>
+                </section>
+                <section>
+                    <h3>Screwed Up Site: Engadget</h3>
+                    <img src="img/Engadget.png" style="line-height: 1.2em; letter-spacing: -0.02em;">
+                    <div class="pullLeft">
+                        Searching Engadget fails - even tech web sites are not immune :)
+                    </div>
+                </section>
+                <section>
+                    <h3>Screwed Up Site: LiveNation</h3>
+                    <iframe width="640" height="360" src="https://www.youtube.com/embed/2WmbfK2M2wo?autoplay=0&autohide=1&modestbranding=1&rel=0&hd=1" frameborder="0" allowfullscreen></iframe>
+                    <div class="pullLeft">
+                        Select a venue seat, hit the checkout button, and... nothing.<br/>
+                        <br/>
+                        Open the JS console and admire the view: It seems to hit the same JS error in an infinite loop. 
+                        <br/><br/>
+                        Fun for hours. Loss of customers guaranteed.
+                        <small><a href="http://www.youtube.com/embed/2WmbfK2M2wo" target="_blank">Link to video</a></small>
+                    </div>
+                </section>
+                <section>
+                    <h3>Screwed Up Site: T-Mobile</h3>
+                    <img src="img/tmo.png" style="line-height: 1.2em; letter-spacing: -0.02em;">
+                    <div class="pullLeft">
+                        Try paying on the site, and get thrown back to the login page, again and again.
+                    </div>
+                </section>
+                <section>
+                    <h3>Screwed Up Site: Best Buy</h3>
+                    <img src="img/BestBuy.png" style="line-height: 1.2em; letter-spacing: -0.02em;">
+                    <div class="pullLeft">
+                        Switch to item spec
+                    </div>
+                </section>
+            </section>
+            <!-- ad-block fails -->
+
+            <!-- JavaScript code samples -->
+            <section>
+                <section>
+                    <h2>JavaScript Patterns</h2>
+                    <div class="pullLeft">If your code looks like this:</div>
                     <pre>
                         <code>
 &lt;script src="/link/to/remote/script.js"&gt;&lt;/script&gt;
@@ -224,11 +312,11 @@
 &lt;/script&gt;
                         </code>
                     </pre>
-                    <div style="text-align: left;">Then you're potentially falling into the same trap:</div>
-                    <div style="text-align: left;">what if /link/to/remote is on the ad-blocker's blacklist?</div>
-                    <div style="text-align: left;">
+                    <div class="pullLeft">Then you're potentially falling into the same trap:</div>
+                    <div class="pullLeft">what if /link/to/remote is on the ad-blocker's blacklist?</div>
+                    <div class="pullLeft">
                         <br></div>
-                    <div style="text-align: left;">
+                    <div class="pullLeft">
                         The object you refer to will evaluate to&nbsp;
                         <span style="font-size: 0.55em; line-height: 1.2em; letter-spacing: -0.02em; background-color: rgb(255, 51, 0);">undefined</span>
                         , so calling a method or accessing a property will yield an error.
@@ -276,7 +364,7 @@ else {
                 </section>
                 <section>
                     <h2>More Existence Checking Patterns</h2>
-                    <div style="text-align: left;">
+                    <div class="pullLeft">
                         <ol>
                             <li>
                                 Check whether the object is accessible globally:
@@ -301,97 +389,89 @@ else {
                     </div>
                 </section>
             </section>
+            <!-- end JavaScript code samples -->
+            
+            <!-- testing -->
             <section>
                 <section>
-                    <h3>Ad-block #Fails</h3>
-                    <div style="text-align: left;">
-                        <br></div>
-                    <div style="text-align: left;">
-                        Here are a couple of commercial sites that do not anticipate ad-blockers, and may actually lose customers as a result of that.
+                    <h3>Client Side Unit Testing</h3>
+                    <div class="pullLeft">
+                        Use client side unit tests to find out how your code fairs when ad-blockers are present.<br><br>
+                        In the following demo, I'm utilizing <a href="http://qunitjs.com/" target="_blank">QUint</a> to check for the existence of a global variable that's supposed to exist for the code to run
+                    </div>
+                    <br>
+                    <a href="demo/comscore-qunit.html" target="_blank">Demo</a>
+                </section>
+                <section>
+                    <h3>Automatic Testing</h3>
+                    <div class="pullLeft">
+                        If you're utilizing a headless broser (such as Selenium, PhantomJS) for your automatic testing, there's no good/easy way to add ad-blockers to the mix.<br><br>
+                        Your best bet is to test on a machine with firewall (or iptables) rules that block the urls of all external resources.<br><br>
+                        Needless to say, load testing should be carried out on another machine, as the full load of the pages includes external resources.
                     </div>
                 </section>
                 <section>
-                    <h3>Screwed Up Site: USAir</h3>
-                    <img src="img/USAir.png" style="line-height: 1.2em; letter-spacing: -0.02em;">
-                    <div style="text-align: left;">
-                        The behavior of flight booking on the USAir site is significantly affected by ad-block.
+                    <h3>Test for Ad-blocker's Existence</h3>
+                    <div class="pullLeft">
+                        Because Ad-blockers operate on the browser/client side, there's no easy way to detect their presence from the server, but the following 3-step approach should serve you well:
+                        <br><br>
+                        <ol>
+                            <li>In your first page, add a &lt;script&gt; element. In it, set a global variable to a value</li>
+                            <li>Load a JavaScript file, with a name that is sure to be blocked by an ad-blocker (i.e. 'ads.js').<br>
+                                This file will contain a single line, that changes the value of the global variable
+                            </li>
+                            <li>Check the value of the variable - if it didn't change, an ad-blocker is in place.<br>
+                                You can react on the page itself, redirect the user, or send the server notice via Ajax
+                            </li>
+                        </ol>
                     </div>
-                    <div style="text-align: left;"><br></div>
-                    <div style="text-align: left;">
-                        The list of JS errors is long, and explains why certain aspects of the form that depend on JS (such as the drop-down calendars) don't work well, or at all.
-                    </div>
-                </section>
-                <section>
-                    <h3>Screwed Up Site: Engadget</h3>
-                    <img src="img/Engadget.png" style="line-height: 1.2em; letter-spacing: -0.02em;">
-                    <div style="text-align: left;">
-                        Searching Engadget fails - even tech web sites are not immune :)
-                    </div>
-                </section>
-                <section>
-                    <h3>Screwed Up Site: LiveNation</h3>
-                    <iframe width="640" height="360" src="https://www.youtube.com/embed/2WmbfK2M2wo?autoplay=0&autohide=1&modestbranding=1&rel=0&hd=1" frameborder="0" allowfullscreen></iframe>
-                    <div style="text-align: left;">
-                        Select a venue seat, hit the checkout button, and... nothing.<br/>
-                        <br/>
-                        Open the JS console and admire the view: It seems to hit the same JS error in an infinite loop. 
-                        <br/><br/>
-                        Fun for hours. Loss of customers guaranteed.
-                        <small><a href="http://www.youtube.com/embed/2WmbfK2M2wo" target="_blank">Link to video</a></small>
-                    </div>
-                </section>
-                <section>
-                    <h3>Screwed Up Site: T-Mobile</h3>
-                    <img src="img/tmo.png" style="line-height: 1.2em; letter-spacing: -0.02em;">
-                    <div style="text-align: left;">
-                        Try paying on the site, and get thrown back to the login page, again and again.
-                    </div>
-                </section>
-                <section>
-                    <h3>Screwed Up Site: Best Buy</h3>
-                    <img src="img/BestBuy.png" style="line-height: 1.2em; letter-spacing: -0.02em;">
-                    <div style="text-align: left;">
-                        Switch to item spec
-                    </div>
+                    <br>
+                    <a href="demo/existence.html" target="_blank">Demo</a>
                 </section>
             </section>
+            <!-- end testing -->
+
+            <!-- handling ad-blocking gracefully -->
             <section>
                 <section>
-                    <h2>Handling Ad-blocking Gracefully</h2>
-                    <div style="text-align: left;">
+                    <h2>Handling Ad-blockers Gracefully</h2>
+                    <div class="pullLeft">
                         <br></div>
-                    <div style="text-align: left;">
+                    <div class="pullLeft">
                         Here are a couple of commercial sites that are very aware of the existence of ad-blockers, and will inform you (or punish you) for using them.
                     </div>
                 </section>
                 <section>
                     <h2>OKCupid</h2>
-                    <div style="text-align: left;">
+                    <div class="pullLeft">
                         OkCupid will inform you that you're harming their revenue stream, and ask for donation:
                         <img src="img/OKCupid.png" style="line-height: 1.2em; text-align: center; letter-spacing: -0.02em; float:right;"></div>
                 </section>
                 <section>
                     <h2>Hulu</h2>
-                    <div style="text-align: left;">
+                    <div class="pullLeft">
                         Hulu will punish you with a 30-60 seconds delay before allowing you to watch a video, if you're blocking ads:
                     </div>
-                    <div style="text-align: left;">
+                    <div class="pullLeft">
                         <img src="img/Hulu.png">
                         <br></div>
                 </section>
                 <section>
                     <h2>AllThingsD</h2>
-                    <div style="text-align: left;">
+                    <div class="pullLeft">
                         Will inform you of their use of trackers, and even encourage you to install an ad-blocker (Ghostery a favorite):
                     </div>
-                    <div style="text-align: left;">
+                    <div class="pullLeft">
                         <img src="img/AllThingsD.png">
                         <br></div>
-                    <div style="text-align: left;">
+                    <div class="pullLeft">
                         Fun fact: This message itself uses a cookie; so it would only appear to you once - unless you blocked it originally, that is. :)
                     </div>
                 </section>
             </section>
+            <!-- end handling ad-blocking gracefully -->
+            
+            <!-- summary -->
             <section>
                 <h2>Questions?</h2>
                 <div>
@@ -407,8 +487,8 @@ else {
                     <img src="img/adblockQR.png">
                 </div>
             </section>
+            <!-- end summary -->
         </div>
-
     </div>
 
     <script src="lib/js/head.min.js"></script>
