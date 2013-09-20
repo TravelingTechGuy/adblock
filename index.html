@@ -329,15 +329,15 @@
                 </section>
                 <section>
                     <h1>Hands-on Demo</h1>
-                    <a href="demo/google.html" target="_blank">Google API</a>&nbsp;|&nbsp;
-                    <a href="demo/twitter.html" target="_blank">Twitter & LinkedIn</a>&nbsp;|&nbsp;
-                    <a href="demo/comscore.html" target="_blank">comScore API</a>&nbsp;|&nbsp;
-                    <a href="demo/google.html" target="_blank">comScore API fixed</a>
+                    <a href="examples/google.html" target="_blank">Google API</a>&nbsp;|&nbsp;
+                    <a href="examples/twitter.html" target="_blank">Twitter & LinkedIn</a>&nbsp;|&nbsp;
+                    <a href="examples/marketo.html" target="_blank">Marketo API</a>&nbsp;|&nbsp;
+                    <a href="examples/marketo-fixed.html" target="_blank">Marketo API fixed</a>
                     <div><br><br><br></div>
                     <div class="mediumText">
                         To test, you'll need to browse to the pages, rather than open them.<br>
                         Just run <code style="background: #3f3f3f">node app.js</code> in the presentation's root,<br>
-                        and browse to http://localhost:1337/demo/&lt;page name&gt;
+                        and browse to http://localhost:1337/examples/&lt;page name&gt;
                     </div>
                 </section>
                 <section>
@@ -392,6 +392,17 @@ else {
                         </ol>
                     </div>
                 </section>
+                <section>
+                    <h2>Try-catch pattern</h2>
+                    <div class="pullLeft">
+                        <pre><code>try { expectedObject.method(); } catch(e) {}</code></pre>
+                        <br>
+                        It works - but I do my best to avoid exception handling in JavaScript.<br>
+                        It's not as efficient as direct error handling (many sources. Try <a href="http://www.developerknowhow.com/javascript-trycatch-performance-hit/" target="_blank">this</a>, for example).
+                        <br><br>
+                        It's also not very readable, and may actually swallow real exceptions that need to be handled.
+                    </div>
+                </section>
             </section>
             <!-- end JavaScript code samples -->
             
@@ -404,15 +415,7 @@ else {
                         The following demo uses <a href="http://qunitjs.com/" target="_blank">QUint</a> to check for the existence of a global variable that's supposed to exist for the code to run
                     </div>
                     <br>
-                    <a href="demo/comscore-qunit.html" target="_blank">Demo</a>
-                </section>
-                <section>
-                    <h3>Automatic Testing</h3>
-                    <div class="pullLeft">
-                        If you're utilizing a headless browser (such as Selenium, PhantomJS) for your automatic testing, there's no good/easy way to add ad-blockers to the mix.<br><br>
-                        Your best bet is to test on a machine with firewall (or iptables) rules that block the urls of all external resources.<br><br>
-                        Needless to say, load testing should be carried out on another machine, as the full load of the pages includes external resources.
-                    </div>
+                    <a href="examples/marketo-qunit.html" target="_blank">Demo</a>
                 </section>
                 <section>
                     <h3>Test for Ad-blocker's Existence</h3>
@@ -430,7 +433,15 @@ else {
                         </ol>
                     </div>
                     <br>
-                    <a href="demo/existence.html" target="_blank">Demo</a>
+                    <a href="examples/existence.html" target="_blank">Demo</a>
+                </section>
+                <section>
+                    <h3>Automatic Testing</h3>
+                    <div class="pullLeft">
+                        If you're utilizing a headless browser (such as <a href="http://www.seleniumhq.org/" target="_blank">Selenium</a>, <a href="http://phantomjs.org/" target="_blank">PhantomJS</a>) for your automatic testing, there's no good/easy way to add ad-blockers to the mix.<br><br>
+                        Your best bet is to test on a machine with firewall (or iptables) rules that block the urls of all external resources.<br><br>
+                        Needless to say, load testing should be carried out on another machine, as the full load of the pages includes external resources.
+                    </div>
                 </section>
             </section>
             <!-- end testing -->
@@ -478,6 +489,27 @@ else {
                         <br></div>
                     <div class="pullLeft">
                         Fun fact: This message itself uses a cookie; so it would only appear to you once - unless you blocked it originally, that is. :)
+                    </div>
+                </section>
+                <section>
+                    <h2>Ghostery Surrogates</h2>
+                    <div class="pullLeft">
+                        After several people blamed Ghostery for "breaking their internet" on the Ghostery support forums, Ghostery came up with the concept of "surrogates":
+                    </div>
+                    <br>
+                    <blockquote>
+                        "Surrogate scripts are dummy scripts inserted by Ghostery in an attempt to shim just enough of the blocked tracker's JS interface to let sites that depend on that interface to continue working. You can get a bit more background information in <a href="https://getsatisfaction.com/ghostery/topics/ghosterys_blocking_breaks_functionality_on_websites-14gndt" target="_blank">this thread</a>"
+                        <br><br>
+                        <small class="pullRight">
+                            -- <a href="https://getsatisfaction.com/ghostery/topics/comscore_script_slips_through?rfm=1" target="_blank">Alexei, Developer at Ghostery</a>
+                        </small>
+                    </blockquote>
+                    <br>
+                    <div class="pullLeft">
+                        Here is the current COMSCORE surrogate, for example:
+                        <pre><code>
+var COMSCORE={beacon:function(){},purge:function(){},__noSuchMethod__:function(){}}
+                        </code></pre>
                     </div>
                 </section>
             </section>

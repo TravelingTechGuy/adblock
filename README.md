@@ -1,7 +1,7 @@
 Your Ad-blocker Broke My Site!
 ==============================
 
-This [Reveal.js](https://github.com/hakimel/reveal.js) presentation will:
+This presentation will:
 
 1. Define what are ad-blockers
 2. Review some of the leading available ad-blockers out there
@@ -18,7 +18,7 @@ You can also see the presentation in action [here](http://goo.gl/V41qp), or scan
 ###Update 8/2/2013
 I've added a few things to flesh out the presentation, ahead of the Silicon Valley Code Camp session:
 
-1. **Demos:** showing various misbehaviors - these should be opened in a browser running Ghostery, and compared to a browser that does not.
+1. **Examples:** showing various misbehaviors - these should be opened in a browser running Ghostery, and compared to a browser that does not.
 2. Since plugins do not work on local files (file:// protocol), I included a small node file that will serve as a simple web server for the presentation.
 
 **The following section is only necessary if you want to run the demos locally.** 

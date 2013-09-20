@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html class="no-js">
+    <head>
+        <meta name="generator" content="HTML Tidy for Mac OS X (vers 31 October 2006 - Apple Inc. build 15.6), see www.w3.org">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>
+            AdBlock examples
+        </title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="css/normalize.min.css" type="text/css">
+        <link rel="stylesheet" href="css/main.css" type="text/css"><!--[if lt IE 9]>
+            <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+            <script>window.html5 || document.write('<script src="js/vendor/html5shiv.js"><\/script>')</script>
+        <![endif]-->
+    </head>
+    <body>
+        <h1 id="your-ad-blocker-broke-my-site">
+            Your Ad-blocker Broke My Site!
+        </h1>
+        <h2 id="presentation-example-files">
+            Presentation example files
+        </h2>
+        <p>
+            These examples work together with the presentation, to demo the effects of ad-blockers on common beacons. For the demos to work, the pages need to be served from a server (and not from a local file:// url), or else the ad-blockers ignore them.
+        </p>
+        <p>
+            You can either put the entire examples directory under a web server, or just use the small Node.js script attached Make sure <a href="http://nodejs.org/">Node.js</a> and <a href="https://npmjs.org/">NPM</a> are installed. To run the demos locally, make sure you have node and npm installed:
+        </p>
+        <pre>
+<code>$ git clone https://github.com/TravelingTechGuy/adblock.git
+$ cd ./adblock
+$ npm install
+$ node app
+</code>
+</pre>
+        <p>
+            Browse to <a href="http://localhost:1337">http://localhost:1337</a> to see the presentation, or <a href="http://localhost:1337/examples">http://localhost:1337/examples</a> to see the examples
+        </p>
+        <p>
+            To use these examples properly, you'll need 2 browsers:
+        </p>
+        <ol>
+            <li>A browser with <a href="http://www.adblockplus.org">adblock+</a> and <a href="http://www.ghostery.com">Ghostery</a> installed
+            </li>
+            <li>A browser with no ad-blocking extensions
+            </li>
+        </ol>
+        <p>
+            Open each page in both browsers to observe the effects. All example pages have a simple addition calculator that may, or may not, work as planned - depnding on the page content.
+        </p>
+        <p>
+            The pages provided:
+        </p>
+        <ol>
+            <li>
+                <a href="http://localhost:1337/examples/google.html">google.html</a> - Google Analytics interface blocked
+            </li>
+            <li>
+                <a href="http://localhost:1337/examples/twitter.html">twitter.com</a> - Twitter and LinkedIn widgets blocked
+            </li>
+            <li>
+                <a href="http://localhost:1337/examples/marketo.html">marketo.html</a> - Marketo code blocked, causing a crash
+            </li>
+            <li>
+                <a href="http://localhost:1337/examples/marketo-fixed.html">marketo-fixed.html</a> - Marketo code existence handled without harming functionality
+            </li>
+            <li>
+                <a href="http://localhost:1337/examples/marketo-qunit.html">marketo-qunit.html</a> - Marketo code existence, tested by QUnit
+            </li>
+            <li>
+                <a href="http://localhost:1337/examples/marketo.html">existence.html</a> - Simple script testing for AdBlock existence
+            </li>
+        </ol>
+    </body>
+</html>
