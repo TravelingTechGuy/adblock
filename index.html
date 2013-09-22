@@ -42,7 +42,7 @@
                 <br /><br />
                 <p class="mediumText">
                     This presentation uses the <a href="https://github.com/hakimel/reveal.js" target="_blank">Reveal.js</a> framework by Hakim<br />
-                    Special thanks to Steve Sauders' <a href="http://stevesouders.com/docs/paypal-spof-20121115.pptx" target="_blank">SPOF presentation (PPT file)</a>
+                    Inspired by Steve Sauders' <a href="http://stevesouders.com/docs/paypal-spof-20121115.pptx" target="_blank">SPOF presentation (PPT file)</a>
                 </p>
                 <br /><br />
                 <p class="fragment">
@@ -70,15 +70,16 @@
                     <h4 class="pullLeft">In this presentation we'll discuss:</h4>
                     <div class="pullLeft">
                         <ol>
-                            <li class="fragment">What's are ad-blockers?</li>
-                            <li class="fragment">Why do people use them?</li>
+                            <li class="fragment">What are ad-blockers?</li><br>
+                            <li class="fragment">Why do people use them?</li><br>
                             <li class="fragment">
                                 How do they impact your code? <strong>(NOT your revenue<small><sup>*</sup></small>)</strong>
                                 <small><sup>*</sup>See <a href="https://adblockplus.org/forum/viewtopic.php?f=1&t=10030&sid=e3d866d4c395cec9958464c14c9d620a" target="_blank">this thread</a> on the AdBlockPlus forums for a revenue-related discussion</small>
                             </li>
-                            <li class="fragment">How to handle ad-blockers in your JavaScript code</li>
-                            <li class="fragment">How to properly test that your code is ad-blocker proof</li>
-                            <li class="fragment">Samples of web sites that handle and mishandle ad-blockers</li>
+                            <li class="fragment">How to handle ad-blockers in your JavaScript code</li><br>
+                            <li class="fragment">How to properly test that your code is ad-blocker proof</li><br>
+                            <li class="fragment">Samples of web sites that handle and mishandle ad-blockers</li><br>
+                            <li class="fragment">Q&amp;A</li>
                         </ol>
                     </div>
                 </section>
@@ -111,29 +112,29 @@
                 </section>
                 <section>
                     <h2>Why Use an Ad-blocker?</h2>
-                    <div class="pullLeft">
+                    <div class="pullLeft fragment">
                         <ol>
-                            <li class="fragment">
+                            <li>
                                 Maintains your privacy - blocks beacons and analytics; prevents cross-site data sharing
                                 <br>
                                 <br>
                             </li>
-                            <li class="fragment">
+                            <li>
                                 Blocks spam - unwanted/inappropriate/nagging ads
                                 <br>
                                 <br>
                             </li>
-                            <li class="fragment">
+                            <li>
                                 Removes annoying ads - have you ever had a flash ad jumping in a loop in the middle of your screen?
                                 <br>
                                 <br>
-                            </li class="fragment">
-                            <li class="fragment">
+                            </li>
+                            <li>
                                 Improves page load time significantly
                                 <br>
                                 <br>
                             </li>
-                            <li class="fragment">
+                            <li>
                                 Conserves bandwidth
                             </li>
                         </ol>
@@ -184,7 +185,7 @@
                 <section>
                     <h2>Why Should I Care?</h2>
                     <div class="pullLeft">
-                        You may be thinking: "my web app does not use any ads, or metrics - why should I care?". You should if you rely on one of the following:
+                        You should care, if your relies on one (or more) of the following:
                     </div>
                     <br />
                     <div class="pullLeft" class="fragment">
@@ -198,11 +199,12 @@
                                 <br /><br />
                             </li>
                             <li>
-                                <strong>Advertising Beacons</strong> - calling the beacon's API, when the beacon object is blocked, would kill any JavaScript code that follows
+                                <strong>Facebook login</strong> - Facebook widgets and buttons are a common target, as are <strong>Twitter</strong> widgets, and various other social applications
                                 <br /><br />
                             </li>
                             <li>
-                                <strong>Twitter</strong> - their scripts can really block your site, slowing it down would be the best outcome, crashing it the worst
+                                <strong>Advertising Beacons</strong> - calling the beacon's API, when the beacon object is blocked, would kill any JavaScript code that follows
+                                <br /><br />
                             </li>
                         </ol>
                     </div>
@@ -235,7 +237,7 @@
                         </ul>
                         <div><br></div>
                         <div class="pullLeft">
-                            <strong>&nbsp; &nbsp; ...then any user who uses an ad-blocker<br>&nbsp; &nbsp; might break&nbsp;your web page</strong><br>
+                            <strong>...then any user who uses an ad-blocker might break your web page</strong><br>
                         </div>
                     </div>
                 </section>
@@ -278,7 +280,7 @@
                         <br/>
                         Open the JS console and admire the view: It seems to hit the same JS error in an infinite loop. 
                         <br/><br/>
-                        Fun for hours. Loss of customers guaranteed.
+                        Fun for hours. Potential loss of customers and frustration guaranteed.
                         <small><a href="http://www.youtube.com/embed/2WmbfK2M2wo" target="_blank">Link to video</a></small>
                     </div>
                 </section>
@@ -286,7 +288,7 @@
                     <h3>Screwed Up Site: T-Mobile</h3>
                     <img src="img/tmo.png" style="line-height: 1.2em; letter-spacing: -0.02em;">
                     <div class="pullLeft">
-                        Try paying on the site, and get thrown back to the login page, again and again.
+                        Try paying on the site, and get thrown back to the login page repeatedly.
                     </div>
                 </section>
                 <section>
@@ -331,13 +333,13 @@
                     <h1>Hands-on Demo</h1>
                     <a href="examples/google.html" target="_blank">Google API</a>&nbsp;|&nbsp;
                     <a href="examples/twitter.html" target="_blank">Twitter & LinkedIn</a>&nbsp;|&nbsp;
-                    <a href="examples/marketo.html" target="_blank">Marketo API</a>&nbsp;|&nbsp;
-                    <a href="examples/marketo-fixed.html" target="_blank">Marketo API fixed</a>
+                    <a href="examples/marketo.html" target="_blank">Marketo API</a>
                     <div><br><br><br></div>
-                    <div class="mediumText">
+                    <div>
+                        <small>
                         To test, you'll need to browse to the pages, rather than open them.<br>
                         Just run <code style="background: #3f3f3f">node app.js</code> in the presentation's root,<br>
-                        and browse to http://localhost:1337/examples/&lt;page name&gt;
+                        and browse to http://localhost:1337/examples/&lt;page name&gt;</small>
                     </div>
                 </section>
                 <section>
@@ -365,6 +367,8 @@ else {
 &lt;/script&gt;
                         </code>
                     </pre>
+                    <br>
+                    <a href="examples/marketo-fixed.html" target="_blank">Marketo API fixed</a>
                 </section>
                 <section>
                     <h2>More Existence Checking Patterns</h2>
@@ -393,14 +397,18 @@ else {
                     </div>
                 </section>
                 <section>
-                    <h2>Try-catch pattern</h2>
+                    <h2>Try-Catch Pattern</h2>
                     <div class="pullLeft">
                         <pre><code>try { expectedObject.method(); } catch(e) {}</code></pre>
                         <br>
-                        It works - but I do my best to avoid exception handling in JavaScript.<br>
-                        It's not as efficient as direct error handling (many sources. Try <a href="http://www.developerknowhow.com/javascript-trycatch-performance-hit/" target="_blank">this</a>, for example).
-                        <br><br>
-                        It's also not very readable, and may actually swallow real exceptions that need to be handled.
+                        It works - but I do my best to avoid exception handling in JavaScript:<br><br>
+                        <ul>
+                            <li>It's not as efficient, from a performance perspective, as direct error handling<br>
+                                <small>(There are many discussions on this subject, here's <a href="http://www.developerknowhow.com/javascript-trycatch-performance-hit/" target="_blank">one</a>, for example)</small>
+                            </li>
+                            <li>It's not very readable</li>
+                            <li>It may actually swallow real exceptions that need to be handled</li>
+                        </ul>
                     </div>
                 </section>
             </section>
@@ -409,13 +417,20 @@ else {
             <!-- testing -->
             <section>
                 <section>
+                    <h2>Testing</h2>
+                    <div class="pullLeft">
+                        You should test your code, to find out any adverse behavior it may expereience when ad-blockers are present.<br><br>
+                        Once your code is out in the wild, your users would become your testers...
+                    </div>
+                </section>
+                <section>
                     <h3>Client Side Unit Testing</h3>
                     <div class="pullLeft">
                         Use client side unit tests to find out how your code fairs when ad-blockers are present.<br><br>
                         The following demo uses <a href="http://qunitjs.com/" target="_blank">QUint</a> to check for the existence of a global variable that's supposed to exist for the code to run
                     </div>
                     <br>
-                    <a href="examples/marketo-qunit.html" target="_blank">Demo</a>
+                    <a href="examples/marketo-qunit.html" target="_blank">Marketo QUnit Demo</a>
                 </section>
                 <section>
                     <h3>Test for Ad-blocker's Existence</h3>
@@ -433,7 +448,7 @@ else {
                         </ol>
                     </div>
                     <br>
-                    <a href="examples/existence.html" target="_blank">Demo</a>
+                    <a href="examples/existence.html" target="_blank">Existence Demo</a>
                 </section>
                 <section>
                     <h3>Automatic Testing</h3>
@@ -466,9 +481,11 @@ else {
                 </section>
                 <section>
                     <h2>OKCupid</h2>
+                    <img src="img/OKCupid.png" style="line-height: 1.2em; text-align: center; letter-spacing: -0.02em; float:right;">
                     <div class="pullLeft">
-                        OkCupid will inform you that you're harming their revenue stream, and ask for donation:
-                        <img src="img/OKCupid.png" style="line-height: 1.2em; text-align: center; letter-spacing: -0.02em; float:right;"></div>
+                        <br><br>
+                        OkCupid will inform you that you're harming their<br>revenue stream, and ask for donation:
+                    </div>
                 </section>
                 <section>
                     <h2>Hulu</h2>
