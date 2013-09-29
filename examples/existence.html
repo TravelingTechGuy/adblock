@@ -16,7 +16,7 @@
         <![endif]-->
     </head>
     <body>
-        <div id="result"></div>
+        <h1 style="text-align:center;">AdBlocker is <span id="result"></span></h1>
         
         <!-- step 1: set global variable -->
         <script>
@@ -28,7 +28,8 @@
         
         <!-- step 3: detect variable change - if step 2 was blocked, no change occurs -->
         <script>
-            document.getElementById('result').textContent = 'adBlocker is ' + (adBlocker ? 'active' : 'inactive');
+            document.getElementById('result').textContent = (adBlocker ? 'active' : 'inactive');
+            document.getElementById('result').style.color = (adBlocker ? 'green' : 'red');
         </script>
         
     </body>
