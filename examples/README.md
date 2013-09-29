@@ -26,7 +26,7 @@ All example pages have a simple addition calculator that may, or may not, work a
 
 The pages provided:
 
-1. [existence.html](http://localhost:1337/examples/marketo.html) - Simple script testing for AdBlock existence
+1. [existence.html](http://localhost:1337/examples/existence.html) - Simple script testing for AdBlock existence
 2. [twitter.com](http://localhost:1337/examples/twitter.html) - Twitter and LinkedIn widgets blocked
 3. [marketo.html](http://localhost:1337/examples/marketo.html) - Marketo code blocked, causing a crash
 4. [marketo-fixed.html](http://localhost:1337/examples/marketo-fixed.html) - Marketo code existence handled without harming functionality
