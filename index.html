@@ -41,8 +41,8 @@
                 </p>
                 <br /><br />
                 <p class="mediumText">
-                    This presentation uses the <a href="https://github.com/hakimel/reveal.js" target="_blank">Reveal.js</a> framework by Hakim<br />
-                    Inspired by Steve Sauders' <a href="http://stevesouders.com/docs/paypal-spof-20121115.pptx" target="_blank">SPOF presentation (PPT file)</a>
+                    Inspired by Steve Sauders' <a href="http://stevesouders.com/docs/paypal-spof-20121115.pptx" target="_blank">SPOF presentation (PPT file)</a><br />
+                    <small>This presentation uses the <a href="https://github.com/hakimel/reveal.js" target="_blank">Reveal.js</a> framework by Hakim</small>
                 </p>
                 <br /><br />
                 <p class="fragment">
@@ -185,13 +185,17 @@
                 <section>
                     <h2>Why Should I Care?</h2>
                     <div class="pullLeft">
-                        You should care, if your relies on one (or more) of the following:
+                        Does your code rely on any of the following?
                     </div>
                     <br />
-                    <div class="pullLeft" class="fragment">
+                    <div class="pullLeft" class="fragment mediumText">
                         <ol>
                             <li>
-                                <strong>Google maps or widgets</strong> - these can either be blocked by a plugin, or by the network provider (China?). Ever accessed a feedback form that misbehaved and had a big empty square in the middle? It might have been a map
+                                <strong>Advertising Beacons</strong> - calling the beacon's API, when the beacon object is blocked, would kill any JavaScript code that follows
+                                <br /><br />
+                            </li>
+                            <li>
+                                <strong>Google maps or widgets</strong> - these can either be blocked by a plugin, or by the network provider (China?)
                                 <br /><br />
                             </li>
                             <li>
@@ -200,11 +204,7 @@
                             </li>
                             <li>
                                 <strong>Facebook login</strong> - Facebook widgets and buttons are a common target, as are <strong>Twitter</strong> widgets, and various other social applications
-                                <br /><br />
-                            </li>
-                            <li>
-                                <strong>Advertising Beacons</strong> - calling the beacon's API, when the beacon object is blocked, would kill any JavaScript code that follows
-                                <br /><br />
+                                <br />
                             </li>
                         </ol>
                     </div>
@@ -224,7 +224,7 @@
                             </li>
                             <li>
                                 <span style="letter-spacing: -0.02em;">
-                                    If your code breaks or is unusable when a resource is not available...
+                                    If your code breaks, or is unusable when a resource is not available...
                                     <br>
                                 </span>
                                 <br>
@@ -237,7 +237,7 @@
                         </ul>
                         <div><br></div>
                         <div class="pullLeft">
-                            <strong>...then any user who uses an ad-blocker might break your web page</strong><br>
+                            <strong>...then any user with an ad-blocker might break your web page</strong><br>
                         </div>
                     </div>
                 </section>
@@ -294,9 +294,6 @@
                 <section>
                     <h3>Screwed Up Site: Best Buy</h3>
                     <img src="img/BestBuy.png" style="line-height: 1.2em; letter-spacing: -0.02em;">
-                    <div class="pullLeft">
-                        Switch to item spec
-                    </div>
                 </section>
             </section>
             <!-- ad-block fails -->
@@ -324,13 +321,13 @@
                         <br></div>
                     <div class="pullLeft">
                         The object you refer to will evaluate to&nbsp;
-                        <span style="font-size: 0.55em; line-height: 1.2em; letter-spacing: -0.02em; background-color: rgb(255, 51, 0);">undefined</span>
+                        <strong style="background-color: rgb(255, 51, 0); color: white;">undefined</strong>
                         , so calling a method or accessing a property will yield an error.
                     </div>
 
                 </section>
                 <section>
-                    <h1>Hands-on Demo</h1>
+                    <h3>Hands-on Demo</h3>
                     <a href="examples/marketo.html" target="_blank">Marketo API <small>[crash]</small></a>&nbsp;|&nbsp;
                     <a href="examples/twitter.html" target="_blank">Twitter & LinkedIn <small>[visual bug]</small></a>
                     
@@ -368,10 +365,11 @@ else {
                         </code>
                     </pre>
                     <br>
+                    <h3>Repeat for every external resource!</h3>
                     <a href="examples/marketo-fixed.html" target="_blank">Marketo API fixed</a>
                 </section>
                 <section>
-                    <h2>More Existence Checking Patterns</h2>
+                    <h3>More Existence Checking Patterns</h3>
                     <div class="pullLeft">
                         <ol>
                             <li>
@@ -411,6 +409,26 @@ else {
                         </ul>
                     </div>
                 </section>
+                <section>
+                    <h2>Ghostery Surrogates</h2>
+                    <div class="pullLeft">
+                        After several people blamed Ghostery for "breaking their internet" on the Ghostery support forums, Ghostery came up with the concept of "surrogates":
+                    </div>
+                    <blockquote>
+                        "Surrogate scripts are dummy scripts inserted by Ghostery in an attempt to shim just enough of the blocked tracker's JS interface to let sites that depend on that interface to continue working. You can get a bit more background information in <a href="https://getsatisfaction.com/ghostery/topics/ghosterys_blocking_breaks_functionality_on_websites-14gndt" target="_blank">this thread</a>"
+                        <br><br>
+                        <small class="pullRight">
+                            -- <a href="https://getsatisfaction.com/ghostery/topics/comscore_script_slips_through?rfm=1" target="_blank">Alexei, Developer at Ghostery</a>
+                        </small>
+                    </blockquote>
+                    <br>
+                    <div class="pullLeft">
+                        Here is the current COMSCORE surrogate, for example:
+                        <pre><code>
+var COMSCORE={beacon:function(){},purge:function(){},__noSuchMethod__:function(){}}
+                        </code></pre>
+                    </div>
+                </section>
             </section>
             <!-- end JavaScript code samples -->
             
@@ -420,8 +438,12 @@ else {
                     <h2>Testing</h2>
                     <div class="pullLeft">
                         You should test your code, to find out any adverse behavior it may expereience when ad-blockers are present.<br><br>
-                        Once your code is out in the wild, your users would become your testers...
+                        Make sure at least some of your testers have the latest ad-blockers installed on some of the browsers, so they can report adverse effects early.
                     </div>
+                    <br />
+                    <blockquote>
+                        Remember: once your code is out in the wild, your users would become your testers...
+                    </blockquote>
                 </section>
                 <section>
                     <h3>Client Side Unit Testing</h3>
@@ -508,27 +530,6 @@ else {
                         Fun fact: This message itself uses a cookie; so it would only appear to you once - unless you blocked it originally, that is. :)
                     </div>
                 </section>
-                <section>
-                    <h2>Ghostery Surrogates</h2>
-                    <div class="pullLeft">
-                        After several people blamed Ghostery for "breaking their internet" on the Ghostery support forums, Ghostery came up with the concept of "surrogates":
-                    </div>
-                    <br>
-                    <blockquote>
-                        "Surrogate scripts are dummy scripts inserted by Ghostery in an attempt to shim just enough of the blocked tracker's JS interface to let sites that depend on that interface to continue working. You can get a bit more background information in <a href="https://getsatisfaction.com/ghostery/topics/ghosterys_blocking_breaks_functionality_on_websites-14gndt" target="_blank">this thread</a>"
-                        <br><br>
-                        <small class="pullRight">
-                            -- <a href="https://getsatisfaction.com/ghostery/topics/comscore_script_slips_through?rfm=1" target="_blank">Alexei, Developer at Ghostery</a>
-                        </small>
-                    </blockquote>
-                    <br>
-                    <div class="pullLeft">
-                        Here is the current COMSCORE surrogate, for example:
-                        <pre><code>
-var COMSCORE={beacon:function(){},purge:function(){},__noSuchMethod__:function(){}}
-                        </code></pre>
-                    </div>
-                </section>
             </section>
             <!-- end handling ad-blocking gracefully -->
             
@@ -564,7 +565,7 @@ var COMSCORE={beacon:function(){},purge:function(){},__noSuchMethod__:function()
                 progress: true,
                 history: true,
                 center: true,
-
+                mouseWheel: true,
                 theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
                 transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/none
 
