@@ -315,21 +315,21 @@
 &lt;/script&gt;
                         </code>
                     </pre>
-                    <div class="pullLeft">Then you're potentially falling into the same trap:</div>
-                    <div class="pullLeft">what if /link/to/remote is on the ad-blocker's blacklist?</div>
                     <div class="pullLeft">
-                        <br></div>
+                        Then you're potentially falling into the same trap:<br />
+                        what if <strong>/link/to/remote</strong> is on the ad-blocker's blacklist?
+                    </div>
+                    <br>
                     <div class="pullLeft">
                         The object you refer to will evaluate to&nbsp;
                         <strong style="background-color: rgb(255, 51, 0); color: white;">undefined</strong>
-                        , so calling a method or accessing a property will yield an error.
+                        , so calling a method or accessing a property on it, yields an error.
                     </div>
-
                 </section>
                 <section>
                     <h3>Hands-on Demo</h3>
                     <a href="examples/marketo.html" target="_blank">Marketo API <small>[crash]</small></a>&nbsp;|&nbsp;
-                    <a href="examples/twitter.html" target="_blank">Twitter & LinkedIn <small>[visual bug]</small></a>
+                    <a href="examples/twitter.html" target="_blank">Twitter &amp; LinkedIn <small>[visual bug]</small></a>
                     
                     <div><br><br><br></div>
                     <div>
@@ -340,7 +340,7 @@
                     </div>
                 </section>
                 <section>
-                    <h2>Just Check for Existence</h2>
+                    <h2>1. Check Resource Existence</h2>
                     <pre>
                         <code>
 &lt;script src="/link/to/remote/script.js"&gt;&lt;/script&gt;
@@ -395,7 +395,7 @@ else {
                     </div>
                 </section>
                 <section>
-                    <h2>Try-Catch Pattern</h2>
+                    <h3>Try-Catch Pattern</h3>
                     <div class="pullLeft">
                         <pre><code>try { expectedObject.method(); } catch(e) {}</code></pre>
                         <br>
@@ -410,7 +410,32 @@ else {
                     </div>
                 </section>
                 <section>
-                    <h2>Ghostery Surrogates</h2>
+                    <h2>2. Check Ad-blocker Existence</h2>
+                    <div class="pullLeft">
+                        Because Ad-blockers operate on the browser/client side, there's no easy way to detect their presence from the server, but the following 3-step approach should work:
+                        <br><br>
+                        <ol>
+                            <li>
+                                In your first page, add a &lt;script&gt; element. In it, set a global variable to <span style="background-color: rgb(255, 51, 0);">true</span>
+                            </li>
+                            <li>
+                                Load a JavaScript file, with an obnoxious name, that is sure to be blocked by an ad-blocker (i.e. 'ads.js').<br>
+                                This file will contain a single line, that changes the value of the global variable to <span style="background-color: rgb(255, 51, 0);">false</span>
+                            </li>
+                            <li>
+                                Check the value of the variable - if it's <span style="background-color: rgb(255, 51, 0);">true</span>, an ad-blocker is in place.<br>
+                            </li>
+                        </ol>
+                    </div>
+                    <br>
+                    <div class="pullLeft">
+                        Now you can react on the page itself, redirect the user to an alternate page, or send the server notice via Ajax
+                    </div>
+                    <br>
+                    <a href="examples/existence.html" target="_blank">Existence Demo</a>
+                </section>
+                <section>
+                    <h2>3. Ghostery Surrogates</h2>
                     <div class="pullLeft">
                         After several people blamed Ghostery for "breaking their internet" on the Ghostery support forums, Ghostery came up with the concept of "surrogates":
                     </div>
@@ -453,24 +478,6 @@ var COMSCORE={beacon:function(){},purge:function(){},__noSuchMethod__:function()
                     </div>
                     <br>
                     <a href="examples/marketo-qunit.html" target="_blank">Marketo QUnit Demo</a>
-                </section>
-                <section>
-                    <h3>Test for Ad-blocker's Existence</h3>
-                    <div class="pullLeft">
-                        Because Ad-blockers operate on the browser/client side, there's no easy way to detect their presence from the server, but the following 3-step approach should serve you well:
-                        <br><br>
-                        <ol>
-                            <li>In your first page, add a &lt;script&gt; element. In it, set a global variable to a value</li>
-                            <li>Load a JavaScript file, with a name that is sure to be blocked by an ad-blocker (i.e. 'ads.js').<br>
-                                This file will contain a single line, that changes the value of the global variable
-                            </li>
-                            <li>Check the value of the variable - if it didn't change, an ad-blocker is in place.<br>
-                                You can react on the page itself, redirect the user, or send the server notice via Ajax
-                            </li>
-                        </ol>
-                    </div>
-                    <br>
-                    <a href="examples/existence.html" target="_blank">Existence Demo</a>
                 </section>
                 <section>
                     <h3>Automatic Testing</h3>
